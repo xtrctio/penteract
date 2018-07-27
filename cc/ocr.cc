@@ -7,7 +7,7 @@ int TessRecognizePix (Pix *image,
 
   tesseract::TessBaseAPI *api = new tesseract::TessBaseAPI();
 
-  int failed = api->Init(datapath, lang);
+  int failed = api->Init(datapath, lang, tesseract::OcrEngineMode::OEM_LSTM_ONLY);
   if (failed) {
     pixDestroy(&image);
 
